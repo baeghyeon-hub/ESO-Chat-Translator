@@ -11,6 +11,40 @@ from PyQt6.QtWidgets import (
 DEEPL_USAGE_URL = "https://api-free.deepl.com/v2/usage"
 
 
+def _find_usersettings() -> str:
+    """ESO UserSettings.txt 경로 탐색"""
+    docs = Path.home() / "Documents" / "Elder Scrolls Online"
+    if docs.exists():
+        for f in docs.rglob("UserSettings.txt"):
+            return str(f)
+    return ""
+
+
+def _enable_chatlog(settings_path: str) -> bool:
+    """UserSettings.txt 에서 CHAT_LOG_ENABLED 를 1로 설정. 없으면 추가."""
+    try:
+        with open(settings_path, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+
+        found = False
+        new_lines = []
+        for line in lines:
+            if line.strip().upper().startswith("SET CHAT_LOG_ENABLED"):
+                new_lines.append('SET CHAT_LOG_ENABLED "1"\n')
+                found = True
+            else:
+                new_lines.append(line)
+
+        if not found:
+            new_lines.append('\nSET CHAT_LOG_ENABLED "1"\n')
+
+        with open(settings_path, "w", encoding="utf-8") as f:
+            f.writelines(new_lines)
+        return True
+    except Exception:
+        return False
+
+
 def _find_chatlog() -> str:
     candidates = []
     docs = Path.home() / "Documents" / "Elder Scrolls Online"
@@ -63,7 +97,7 @@ class SettingsDialog(QWidget):
         self.setWindowFlags(Qt.WindowType.WindowStaysOnTopHint)
         self.setStyleSheet("background:#18181b;color:#e4e4e7;")
         self.setMinimumWidth(480)
-        self.resize(480, 410)
+        self.resize(480, 470)
         self._build()
 
     def _build(self):
@@ -134,6 +168,25 @@ class SettingsDialog(QWidget):
         self.log_status_lbl.setStyleSheet("color:#71717a;font-size:10px;font-family:'맑은 고딕';")
         lay.addWidget(self.log_status_lbl)
 
+        # ChatLog 미활성화 안내 (기본 숨김)
+        chatlog_notice = QLabel("※ ESO에서 ChatLog 기능을 활성화해야 로그 파일이 생성됩니다.")
+        chatlog_notice.setStyleSheet("color:#f97316;font-size:10px;font-family:'맑은 고딕';")
+        chatlog_notice.setWordWrap(True)
+        lay.addWidget(chatlog_notice)
+
+        enable_row = QHBoxLayout()
+        self.enable_btn = QPushButton("⚡ ChatLog 자동 활성화")
+        self.enable_btn.setStyleSheet(
+            "background:#7c3aed;color:white;border:none;border-radius:4px;"
+            "padding:6px 14px;font-family:'맑은 고딕';font-size:11px;")
+        self.enable_btn.clicked.connect(self._enable_chatlog_clicked)
+        enable_row.addWidget(self.enable_btn)
+        self.enable_lbl = QLabel("ESO 재시작 후 적용됩니다")
+        self.enable_lbl.setStyleSheet("color:#52525b;font-size:10px;font-family:'맑은 고딕';")
+        enable_row.addWidget(self.enable_lbl)
+        enable_row.addStretch()
+        lay.addLayout(enable_row)
+
         # 용어집 경로
         lay.addWidget(self._lbl("용어집 CSV 경로 (선택)"))
         row2 = QHBoxLayout()
@@ -175,9 +228,24 @@ class SettingsDialog(QWidget):
             self.log_edit.setText(path)
             self.log_status_lbl.setText("✅ 자동 감지됨")
             self.log_status_lbl.setStyleSheet("color:#22c55e;font-size:10px;font-family:'맑은 고딕';")
+            self.enable_lbl.setText("ESO 재시작 후 적용됩니다")
         else:
-            self.log_status_lbl.setText("❌ Chat.log를 찾지 못했습니다. 직접 찾기를 이용하세요.")
+            self.log_status_lbl.setText("❌ ChatLog 파일 없음 — 아래 버튼으로 활성화 후 ESO 재시작하세요.")
             self.log_status_lbl.setStyleSheet("color:#ef4444;font-size:10px;font-family:'맑은 고딕';")
+
+    def _enable_chatlog_clicked(self):
+        settings_path = _find_usersettings()
+        if not settings_path:
+            self.enable_lbl.setText("❌ UserSettings.txt 를 찾지 못했습니다")
+            self.enable_lbl.setStyleSheet("color:#ef4444;font-size:10px;font-family:'맑은 고딕';")
+            return
+        ok = _enable_chatlog(settings_path)
+        if ok:
+            self.enable_lbl.setText("✅ 활성화 완료 — ESO 재시작 후 다시 자동 찾기를 눌러보세요")
+            self.enable_lbl.setStyleSheet("color:#22c55e;font-size:10px;font-family:'맑은 고딕';")
+        else:
+            self.enable_lbl.setText("❌ 파일 수정 실패 — 직접 수정하거나 관리자 권한으로 실행하세요")
+            self.enable_lbl.setStyleSheet("color:#ef4444;font-size:10px;font-family:'맑은 고딕';")
 
     def _run_test(self):
         api = self.api_edit.text().strip()
