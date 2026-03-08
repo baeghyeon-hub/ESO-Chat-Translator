@@ -8,7 +8,8 @@ from PyQt6.QtWidgets import (
     QPushButton, QVBoxLayout, QWidget, QFrame,
 )
 
-DEEPL_USAGE_URL = "https://api-free.deepl.com/v2/usage"
+DEEPL_USAGE_FREE = "https://api-free.deepl.com/v2/usage"
+DEEPL_USAGE_PRO  = "https://api.deepl.com/v2/usage"
 
 
 def _find_usersettings() -> str:
@@ -60,7 +61,7 @@ def _find_chatlog() -> str:
 def _fetch_usage(api_key: str) -> dict:
     try:
         r = requests.get(
-            DEEPL_USAGE_URL,
+            DEEPL_USAGE_FREE if api_key.strip().endswith(":fx") else DEEPL_USAGE_PRO,
             headers={"Authorization": f"DeepL-Auth-Key {api_key}"},
             timeout=6,
         )
@@ -97,7 +98,7 @@ class SettingsDialog(QWidget):
         self.setWindowFlags(Qt.WindowType.WindowStaysOnTopHint)
         self.setStyleSheet("background:#18181b;color:#e4e4e7;")
         self.setMinimumWidth(480)
-        self.resize(480, 470)
+        self.resize(480, 510)
         self._build()
 
     def _build(self):
@@ -203,6 +204,27 @@ class SettingsDialog(QWidget):
         hint.setStyleSheet("color:#52525b;font-size:10px;font-family:'맑은 고딕';")
         lay.addWidget(hint)
 
+        sep2 = QFrame()
+        sep2.setFrameShape(QFrame.Shape.HLine)
+        sep2.setStyleSheet("color:#27272a;")
+        lay.addWidget(sep2)
+
+        # 내 채팅 필터
+        my_row = QHBoxLayout()
+        from PyQt6.QtWidgets import QCheckBox
+        self.hide_my_cb = QCheckBox("내 채팅 숨기기")
+        self.hide_my_cb.setChecked(self.cfg.get("hide_my_chat", False))
+        self.hide_my_cb.setStyleSheet("color:#a1a1aa;font-family:'맑은 고딕';font-size:11px;")
+        my_row.addWidget(self.hide_my_cb)
+        self.my_name_edit = QLineEdit(self.cfg.get("my_character_name", ""))
+        self.my_name_edit.setPlaceholderText("캐릭터명 입력 (예: Ricci Curvature)")
+        self.my_name_edit.setStyleSheet(self._INP)
+        my_row.addWidget(self.my_name_edit)
+        lay.addLayout(my_row)
+        my_hint = QLabel("※ 체크 시 해당 캐릭터의 채팅은 번역 패널에 표시되지 않습니다")
+        my_hint.setStyleSheet("color:#52525b;font-size:10px;font-family:'맑은 고딕';")
+        lay.addWidget(my_hint)
+
         lay.addStretch()
 
         save_btn = QPushButton("저장")
@@ -295,9 +317,11 @@ class SettingsDialog(QWidget):
             self.glossary_edit.setText(path)
 
     def _save(self):
-        self.cfg["api_key"]       = self.api_edit.text().strip()
-        self.cfg["log_path"]      = self.log_edit.text().strip()
-        self.cfg["glossary_path"] = self.glossary_edit.text().strip()
+        self.cfg["api_key"]            = self.api_edit.text().strip()
+        self.cfg["log_path"]           = self.log_edit.text().strip()
+        self.cfg["glossary_path"]      = self.glossary_edit.text().strip()
+        self.cfg["my_character_name"]  = self.my_name_edit.text().strip()
+        self.cfg["hide_my_chat"]       = self.hide_my_cb.isChecked()
         self.saved.emit(self.cfg)
         self.close()
 

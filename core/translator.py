@@ -2,13 +2,18 @@ import requests
 
 from core.glossary import protect_glossary_terms, restore_glossary_terms
 
-DEEPL_URL      = "https://api-free.deepl.com/v2/translate"
 REQUEST_TIMEOUT = 5
+
+
+def _get_base_url(api_key: str) -> str:
+    """API 키 끝에 :fx 있으면 Free, 없으면 Pro 엔드포인트 반환."""
+    if api_key.strip().endswith(":fx"):
+        return "https://api-free.deepl.com/v2"
+    return "https://api.deepl.com/v2"
 
 
 def translate_to_korean(text: str, api_key: str, glossary: dict,
                          context: str = "") -> str:
-    """텍스트를 한국어로 번역. 실패 시 오류 문자열 반환."""
     try:
         protected, replacements = protect_glossary_terms(text, glossary)
         payload: dict = {"text": [protected], "target_lang": "KO"}
@@ -19,7 +24,7 @@ def translate_to_korean(text: str, api_key: str, glossary: dict,
             payload["ignore_tags"]  = ["m"]
 
         r = requests.post(
-            DEEPL_URL,
+            f"{_get_base_url(api_key)}/translate",
             headers={"Authorization": f"DeepL-Auth-Key {api_key}"},
             json=payload,
             timeout=REQUEST_TIMEOUT,
@@ -36,10 +41,9 @@ def translate_to_korean(text: str, api_key: str, glossary: dict,
 
 
 def translate_to_english(text: str, api_key: str) -> str:
-    """텍스트를 영어로 번역 (한→영 입력창용). 실패 시 오류 문자열 반환."""
     try:
         r = requests.post(
-            DEEPL_URL,
+            f"{_get_base_url(api_key)}/translate",
             headers={"Authorization": f"DeepL-Auth-Key {api_key}"},
             json={"text": [text], "target_lang": "EN-US"},
             timeout=8,

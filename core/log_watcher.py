@@ -102,6 +102,11 @@ class WatchThread(QThread):
         ch_key = get_channel(ch_num)
         if not self.cfg["channels"].get(ch_key, True):
             return None
+        # 내 채팅 필터
+        if self.cfg.get("hide_my_chat", False):
+            my_name = self.cfg.get("my_character_name", "").strip()
+            if my_name and speaker.strip() == my_name:
+                return None
         return time_str, ch_key, speaker, message
 
     def _translate_parallel(self, pending: list, api_key: str):

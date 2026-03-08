@@ -38,6 +38,8 @@ DEFAULT_CONFIG: dict = {
     "font_size": 11,
     "glossary_path": "eso_glossary.csv",
     "fade_seconds": 10,
+    "my_character_name": "",
+    "hide_my_chat": False,
 }
 
 
