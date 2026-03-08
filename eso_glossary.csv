@@ -1,24 +1,59 @@
 English,Korean
 LFG,그룹 구합니다
+LFG,파티 구해
 LFM,멤버 구합니다
+LFM,멤 구함
+LFM,멤버 구해
 LFDG,돌멘 그룹 구합니다
 PST,귓말 주세요
+PST,귓해
+PST,귓요
+PST,귓주세요
+PST,부탁해요
 WC,채팅 실수
+WC,실수
+WC,오타
 WB,월드 보스
 AFK,자리 비움
 BRB,잠깐 자리 비움
 OOM,자원 부족
 GG,잘 했어요
+GG,수고했어
+GG,수고해요
+GG,잘하셨어요
+GG,훌륭했어
+GG,멋졌어
+GG,최고였어
+GG,대박
 GL,행운을 빌어요
+GL,행운 빌어
+GL,파이팅
+GL,화이팅
+GL,운빨 있어라
 HF,즐겜하세요
+HF,즐거운 게임 되세요
+HF,재밌게 하세요
+HF,즐미
 GZ,축하해요
 Grats,축하해요
 Gratz,축하해요
 WTB,구매 원합니다
+WTB,구해
+WTB,원해
+WTB,살려고
 WTS,판매 원합니다
+WTS,팜
+WTS,팝니다
+WTS,팔아요
 WTT,교환 원합니다
+WTT,교환요
+WTT,바꿔요
+WTT,바꾸자
 PUG,즉석 그룹
+PUG,즉그
+PUG,즉시 그룹
 Prog,공략 진행
+Prog,공략중
 Inc,적 접근 중
 DK,드래곤나이트
 Sorc,소서러
@@ -27,21 +62,21 @@ Plar,템플러
 Den,워든
 Necro,네크로맨서
 Arc,아르카니스트
-MagDK,마지카 드래곤나이트
+MagDK,메지카 드래곤나이트
 StamDK,스태미나 드래곤나이트
-MagSorc,마지카 소서러
+MagSorc,메지카 소서러
 StamSorc,스태미나 소서러
-MagBlade,마지카 나이트블레이드
+MagBlade,메지카 나이트블레이드
 StamBlade,스태미나 나이트블레이드
 MagPlar,마지카 템플러
 StamPlar,스태미나 템플러
-MagDen,마지카 워든
+MagDen,메지카 워든
 StamDen,스태미나 워든
-MagCro,마지카 네크로맨서
+MagCro,메지카 네크로맨서
 StamCro,스태미나 네크로맨서
-AD,알드메리 도미니언
-EP,에본하트 팩트
-DC,대거폴 커버넌트
+AD,알드메리 자치령
+EP,에본하트 조약
+DC,대거폴 동맹
 HM,하드모드
 NM,일반 모드
 VM,베테랑 모드

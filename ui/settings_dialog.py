@@ -98,7 +98,7 @@ class SettingsDialog(QWidget):
         self.setWindowFlags(Qt.WindowType.WindowStaysOnTopHint)
         self.setStyleSheet("background:#18181b;color:#e4e4e7;")
         self.setMinimumWidth(480)
-        self.resize(480, 510)
+        self.resize(480, 560)
         self._build()
 
     def _build(self):
@@ -203,6 +203,21 @@ class SettingsDialog(QWidget):
         hint = QLabel("※ English, Korean 두 열로 된 CSV 파일")
         hint.setStyleSheet("color:#52525b;font-size:10px;font-family:'맑은 고딕';")
         lay.addWidget(hint)
+
+        # 역방향 용어집 경로
+        lay.addWidget(self._lbl("한→영 역방향 용어집 CSV (선택)"))
+        row3 = QHBoxLayout()
+        self.rev_glossary_edit = QLineEdit(self.cfg.get("reverse_glossary_path", "eso_glossary_reverse.csv"))
+        self.rev_glossary_edit.setStyleSheet(self._INP)
+        row3.addWidget(self.rev_glossary_edit)
+        b3 = QPushButton("찾기")
+        b3.setStyleSheet(self._BTN)
+        b3.clicked.connect(self._browse_rev_glossary)
+        row3.addWidget(b3)
+        lay.addLayout(row3)
+        hint2 = QLabel("※ Korean, English 두 열 / 한국어 여러 표현 → 하나의 영어 약어 매핑 가능")
+        hint2.setStyleSheet("color:#52525b;font-size:10px;font-family:'맑은 고딕';")
+        lay.addWidget(hint2)
 
         sep2 = QFrame()
         sep2.setFrameShape(QFrame.Shape.HLine)
@@ -309,6 +324,13 @@ class SettingsDialog(QWidget):
             self.log_edit.setText(path)
             self.log_status_lbl.setText("")
 
+    def _browse_rev_glossary(self):
+        path, _ = QFileDialog.getOpenFileName(
+            self, "역방향 용어집 CSV 선택",
+            str(Path.cwd()), "CSV files (*.csv);;All files (*.*)")
+        if path:
+            self.rev_glossary_edit.setText(path)
+
     def _browse_glossary(self):
         path, _ = QFileDialog.getOpenFileName(
             self, "용어집 CSV 선택",
@@ -319,7 +341,8 @@ class SettingsDialog(QWidget):
     def _save(self):
         self.cfg["api_key"]            = self.api_edit.text().strip()
         self.cfg["log_path"]           = self.log_edit.text().strip()
-        self.cfg["glossary_path"]      = self.glossary_edit.text().strip()
+        self.cfg["glossary_path"]         = self.glossary_edit.text().strip()
+        self.cfg["reverse_glossary_path"] = self.rev_glossary_edit.text().strip()
         self.cfg["my_character_name"]  = self.my_name_edit.text().strip()
         self.cfg["hide_my_chat"]       = self.hide_my_cb.isChecked()
         self.saved.emit(self.cfg)

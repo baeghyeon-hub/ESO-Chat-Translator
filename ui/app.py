@@ -9,7 +9,7 @@ from PyQt6.QtWidgets import QApplication, QMenu, QMessageBox, QSystemTrayIcon
 from constants import get_channel
 from core.cache import load_cache, save_cache
 from core.config import load_config, save_config
-from core.glossary import load_glossary
+from core.glossary import load_glossary, load_reverse_glossary
 from core.log_watcher import WatchThread
 from core.translator import translate_to_english
 from ui.base_panel import BASE_FLAGS
@@ -44,6 +44,7 @@ class App(QObject):
         self.cfg      = load_config()
         self.cache    = load_cache()
         self.glossary = load_glossary(self.cfg.get("glossary_path", "eso_glossary.csv"))
+        self.reverse_glossary = load_reverse_glossary(self.cfg.get("reverse_glossary_path", "eso_glossary_reverse.csv"))
         self.watch_thread: WatchThread | None = None
         self._click_through = False
 
@@ -157,6 +158,7 @@ class App(QObject):
             self.cfg["channels"][key] = cb.isChecked()
         save_config(self.cfg)
         self.glossary = load_glossary(self.cfg.get("glossary_path", "eso_glossary.csv"))
+        self.reverse_glossary = load_reverse_glossary(self.cfg.get("reverse_glossary_path", "eso_glossary_reverse.csv"))
         self.cache.clear()
         n = len(self.glossary)
         self.bottom_p.status_lbl.setText(f"용어집 {n}개 로드됨 (캐시 초기화)")
@@ -205,6 +207,7 @@ class App(QObject):
         save_config(self.cfg)
 
         self.glossary = load_glossary(self.cfg.get("glossary_path", "eso_glossary.csv"))
+        self.reverse_glossary = load_reverse_glossary(self.cfg.get("reverse_glossary_path", "eso_glossary_reverse.csv"))
         self.cache.clear()
 
         self.watch_thread = WatchThread(self.cfg, self.cache, self.glossary)
@@ -232,8 +235,7 @@ class App(QObject):
         self.input_p.show_status("번역 중...")
 
         def do():
-            result = translate_to_english(text, api)
-            # pyqtSignal은 어느 스레드에서 emit해도 메인스레드로 안전하게 전달됨
+            result = translate_to_english(text, api, self.glossary, self.reverse_glossary)
             self._input_result_ready.emit(text, result)
 
         threading.Thread(target=do, daemon=True).start()

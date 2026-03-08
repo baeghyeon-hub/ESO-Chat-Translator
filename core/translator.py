@@ -1,6 +1,6 @@
 import requests
 
-from core.glossary import protect_glossary_terms, restore_glossary_terms
+from core.glossary import protect_glossary_terms, restore_glossary_terms, apply_reverse_glossary, restore_reverse_terms
 
 REQUEST_TIMEOUT = 5
 
@@ -40,16 +40,22 @@ def translate_to_korean(text: str, api_key: str, glossary: dict,
         return f"[오류:{e}]"
 
 
-def translate_to_english(text: str, api_key: str) -> str:
+def translate_to_english(text: str, api_key: str, glossary: dict = {}, reverse_glossary: dict = {}) -> str:
     try:
+        preprocessed, protected_terms = apply_reverse_glossary(text, glossary, reverse_glossary)
+        payload: dict = {"text": [preprocessed], "target_lang": "EN-US"}
+        if protected_terms:
+            payload["tag_handling"] = "xml"
+            payload["ignore_tags"] = ["m"]
         r = requests.post(
             f"{_get_base_url(api_key)}/translate",
             headers={"Authorization": f"DeepL-Auth-Key {api_key}"},
-            json={"text": [text], "target_lang": "EN-US"},
+            json=payload,
             timeout=8,
         )
         if r.status_code == 200:
-            return r.json()["translations"][0]["text"]
+            result = r.json()["translations"][0]["text"]
+            return restore_reverse_terms(result, protected_terms)
         return f"[오류 {r.status_code}]"
     except requests.exceptions.Timeout:
         return "[시간초과]"
