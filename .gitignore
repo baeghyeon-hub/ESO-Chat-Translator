@@ -1,0 +1,9 @@
+translation_cache.json
+*.log
+__pycache__/
+*.pyc
+빌드_exe.bat
+번역기_실행.bat
+build/
+dist/
+*.spec
