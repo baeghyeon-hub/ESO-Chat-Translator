@@ -7,11 +7,12 @@ from PyQt6.QtGui import QColor, QFont, QIcon, QPixmap, QTextCursor
 from PyQt6.QtWidgets import QApplication, QMenu, QMessageBox, QSystemTrayIcon
 
 from constants import get_channel
+from core.alerter import check_keywords, send_alert
 from core.cache import load_cache, save_cache
 from core.config import load_config, save_config
 from core.glossary import load_glossary, load_reverse_glossary
-from core.log_watcher import WatchThread
-from core.translator import translate_to_english
+from watcher.coordinator import WatchThread
+from core.pipeline import translate_to_english, is_error_translation
 from ui.base_panel import BASE_FLAGS
 from ui.bottom_panel import BottomPanel
 from ui.channel_panel import ChannelPanel
@@ -37,7 +38,8 @@ except Exception:
 
 class App(QObject):
     # 서브스레드 → 메인스레드 안전 전달용 시그널
-    _input_result_ready = pyqtSignal(str, str)  # original_ko, result_en
+    _input_result_ready  = pyqtSignal(str, str)        # original_ko, result_en
+    _retry_result_ready   = pyqtSignal(str, str, str)    # original, ch_key, translated
 
     def __init__(self):
         super().__init__()
@@ -47,6 +49,8 @@ class App(QObject):
         self.reverse_glossary = load_reverse_glossary(self.cfg.get("reverse_glossary_path", "eso_glossary_reverse.csv"))
         self.watch_thread: WatchThread | None = None
         self._click_through = False
+        # 첫 번역 지연 방지: UI 표시 전에 모든 번역 모듈 동기 워밍업
+        self._warmup_glossary()
 
         # ── 패널 생성 ──────────────────────────────────────────
         self.title_p   = TitlePanel(self.cfg)
@@ -121,6 +125,8 @@ class App(QObject):
         self.bottom_p.clear_requested.connect(self.chat_p.clear)
         self.input_p.translate_requested.connect(self._translate_input)
         self._input_result_ready.connect(self._on_input_translated)
+        self._retry_result_ready.connect(self._on_retry_done)
+        self.chat_p.retry_requested.connect(self._on_retry_requested)
 
     # ── 투과 ──────────────────────────────────────────────────
     def _toggle_click_through(self):
@@ -138,9 +144,8 @@ class App(QObject):
     # ── 투명도 / 페이드 ───────────────────────────────────────
     def _set_opacity(self, val: int):
         self.cfg["chat_opacity"] = val / 100
-        self.chat_p.set_opacity(val)
         self.chat_p._faded = False
-        self.chat_p._opacity_effect.setOpacity(1.0)
+        self.chat_p.set_opacity(val)   # opacity_effect도 내부에서 함께 처리
 
     def _set_fade(self, seconds: int):
         self.cfg["fade_seconds"] = seconds
@@ -218,13 +223,42 @@ class App(QObject):
         self.watch_thread.start()
         self.bottom_p.set_running(True)
 
+    def _warmup_glossary(self):
+        """앱 __init__ 에서 동기 호출 — UI 표시 전에 완료.
+        모든 번역 모듈을 import하고 패턴을 한 번 실행해
+        첫 메시지 수신 시 지연을 제거한다.
+        """
+        try:
+            from core.pattern        import try_pattern
+            from core.memory         import tm_get
+            from core.pipeline       import translate_to_korean
+            from core.glossary       import tokenize
+            from watcher.parser      import parse_line
+            from watcher.dispatcher  import Dispatcher
+            # 정규식 + glossary 패턴 워밍업 실행
+            try_pattern("LFG dungeon", self.glossary)
+            try_pattern("Need tank for vHRC", self.glossary)
+            tokenize("Need tank for vHRC", self.glossary)
+        except Exception:
+            pass
+
     def _on_message(self, time_str, ch_key, speaker, original, translated):
+        from constants import CHANNEL_INFO
         self.chat_p.append(
             time_str, ch_key, speaker, original, translated,
             self.title_p.orig_cb.isChecked(),
             self.cfg.get("font_size", 11),
         )
         self.chat_p.wake_up()
+
+        # 키워드 알림
+        if self.cfg.get("keyword_alert", True):
+            keywords = self.cfg.get("keywords", [])
+            if keywords:
+                kw = check_keywords(original, translated or "", speaker, ch_key, keywords)
+                if kw:
+                    ch_label = CHANNEL_INFO.get(ch_key, {}).get("label", ch_key)
+                    send_alert(speaker, ch_label, original, translated or "", kw)
 
     # ── 한→영 입력 번역 ───────────────────────────────────────
     def _translate_input(self, text: str):
@@ -236,9 +270,41 @@ class App(QObject):
 
         def do():
             result = translate_to_english(text, api, self.glossary, self.reverse_glossary)
+            result = result.translated  # TranslationResult → str
             self._input_result_ready.emit(text, result)
 
         threading.Thread(target=do, daemon=True).start()
+
+    # ── 재시도 번역 ──────────────────────────────────────────
+    def _on_retry_requested(self, original: str, ch_key: str):
+        """chat_panel에서 오류 메시지 재시도 클릭 시 호출."""
+        api = self.cfg.get("api_key", "").strip()
+        if not api:
+            return
+
+        import threading
+        from core.translator import translate_to_korean
+
+        def do():
+            tr = translate_to_korean(
+                original, api, self.glossary, context=""
+            )
+            self._retry_result_ready.emit(original, ch_key, tr.translated)
+
+        threading.Thread(target=do, daemon=True).start()
+
+    def _on_retry_done(self, original: str, ch_key: str, translated: str):
+        """재시도 결과를 채팅창에 새 줄로 추가."""
+        import datetime as _dt
+        t = _dt.datetime.now().strftime("%H:%M")
+        show_orig = self.title_p.orig_cb.isChecked()
+        fs = self.cfg.get("font_size", 11)
+        self.chat_p.append(t, ch_key, "↻", original, translated, show_orig, fs)
+        self.chat_p.wake_up()
+        # 성공 시 캐시에도 저장
+        from core.log_watcher import is_error_translation
+        if not is_error_translation(translated):
+            self.cache[original] = translated
 
     def _on_input_translated(self, original_ko: str, result_en: str):
         is_error = result_en.startswith("[오류") or result_en.startswith("[시간")

@@ -1,448 +1,456 @@
-English,Korean
-LFG,그룹 구합니다
-LFG,파티 구해
-LFM,멤버 구합니다
-LFM,멤 구함
-LFM,멤버 구해
-LFDG,돌멘 그룹 구합니다
-PST,귓말 주세요
-PST,귓해
-PST,귓요
-PST,귓주세요
-PST,부탁해요
-WC,채팅 실수
-WC,실수
-WC,오타
-WB,월드 보스
-AFK,자리 비움
-BRB,잠깐 자리 비움
-OOM,자원 부족
-GG,잘 했어요
-GG,수고했어
-GG,수고해요
-GG,잘하셨어요
-GG,훌륭했어
-GG,멋졌어
-GG,최고였어
-GG,대박
-GL,행운을 빌어요
-GL,행운 빌어
-GL,파이팅
-GL,화이팅
-GL,운빨 있어라
-HF,즐겜하세요
-HF,즐거운 게임 되세요
-HF,재밌게 하세요
-HF,즐미
-GZ,축하해요
-Grats,축하해요
-Gratz,축하해요
-WTB,구매 원합니다
-WTB,구해
-WTB,원해
-WTB,살려고
-WTS,판매 원합니다
-WTS,팜
-WTS,팝니다
-WTS,팔아요
-WTT,교환 원합니다
-WTT,교환요
-WTT,바꿔요
-WTT,바꾸자
-PUG,즉석 그룹
-PUG,즉그
-PUG,즉시 그룹
-Prog,공략 진행
-Prog,공략중
-Inc,적 접근 중
-DK,드래곤나이트
-Sorc,소서러
-NB,나이트블레이드
-Plar,템플러
-Den,워든
-Necro,네크로맨서
-Arc,아르카니스트
-MagDK,메지카 드래곤나이트
-StamDK,스태미나 드래곤나이트
-MagSorc,메지카 소서러
-StamSorc,스태미나 소서러
-MagBlade,메지카 나이트블레이드
-StamBlade,스태미나 나이트블레이드
-MagPlar,마지카 템플러
-StamPlar,스태미나 템플러
-MagDen,메지카 워든
-StamDen,스태미나 워든
-MagCro,메지카 네크로맨서
-StamCro,스태미나 네크로맨서
-AD,알드메리 자치령
-EP,에본하트 조약
-DC,대거폴 동맹
-HM,하드모드
-NM,일반 모드
-VM,베테랑 모드
-Trifecta,트리펙타
-Speed run,속도전
-vMA,베테랑 맬스트롬 아레나
-nMA,일반 맬스트롬 아레나
-vDSA,베테랑 드래곤스타 아레나
-nDSA,일반 드래곤스타 아레나
-vAA,베테랑 에테리아 문고
-nAA,일반 에테리아 문고
-vHRC,베테랑 헬 라 성채
-nHRC,일반 헬 라 성채
-vSO,베테랑 오피디아 성소
-nSO,일반 오피디아 성소
-vMoL,베테랑 로르카즈의 아가리
-nMoL,일반 로르카즈의 아가리
-vHoF,베테랑 제작의 전당
-nHoF,일반 제작의 전당
-vCR,베테랑 클라우드레스트
-nCR,일반 클라우드레스트
-vSS,베테랑 선스파이어
-nSS,일반 선스파이어
-vKA,베테랑 카인의 방패
-nKA,일반 카인의 방패
-vRG,베테랑 록그로브
-nRG,일반 록그로브
-vDSR,베테랑 드레드세일 암초
-nDSR,일반 드레드세일 암초
-vSE,베테랑 제정신의 끝
-nSE,일반 제정신의 끝
-vLC,베테랑 빛나는 성채
-nLC,일반 빛나는 성채
-CoH,크립트 오브 하츠
-FG,균류 동굴
-BC,추방된 감방
-EH,엘든 공동
-CoA,재의 도시
-ICP,임페리얼 시티 감옥
-WGT,화이트 골드 타워
-BRP,블러드루트 단조장
-FV,포스트 오브 쓰로트
-DoT,지속 피해
-HoT,지속 회복
-AoE,범위 공격
-CC,군중 제어
-CD,쿨타임
-LA,약공격
-HA,강공격
-GCD,글로벌 쿨다운
-BoE,장착 시 귀속
-BoP,습득 시 귀속
-RNG,랜덤
-OP,사기적으로 강함
-Meta,메타
-BiS,최고 세트
-Toon,캐릭터
-Char,캐릭터
-Main,본캐
-Alt,부캐
-MS,마법사 조합
-ZOS,제니맥스 온라인
-PTS,공개 테스트 서버
-NA,북미 서버
-EU,유럽 서버
-Dragonknight,드래곤나이트
-Sorcerer,소서러
-Nightblade,나이트블레이드
-Templar,템플러
-Warden,워든
-Necromancer,네크로맨서
-Arcanist,아르카니스트
-Tank,탱커
-Healer,힐러
-Damage Dealer,딜러
-DPS,딜러
-Off-tank,서브탱
-Support,지원
-Two Handed,양손
-One Hand and Shield,한손방패
-Dual Wield,쌍검
-Bow,활
-Destruction Staff,파괴 스태프
-Restoration Staff,회복 스태프
-Werewolf,늑대인간
-Vampire,뱀파이어
-Assault,돌격
-Magicka,마지카
-Stamina,스태미나
-Ultimate,궁극기
-Health,체력
-Spell Damage,주문 피해
-Weapon Damage,무기 피해
-Critical,치명타
-Penetration,관통
-Resistance,저항
-Recovery,회복량
-Max Magicka,최대 마지카
-Max Stamina,최대 스태미나
-Max Health,최대 체력
-Major Brutality,주요 잔혹함
-Minor Brutality,경미한 잔혹함
-Major Sorcery,주요 마법력
-Minor Sorcery,경미한 마법력
-Major Resolve,주요 결의
-Minor Resolve,경미한 결의
-Major Expedition,주요 원정
-Minor Expedition,경미한 원정
-Burning,화상
-Chilled,냉각
-Concussed,충격
-Poisoned,중독
-Diseased,질병
-Off Balance,균형 상실
-Stunned,기절
-Snared,감속
-Immobilized,속박
-Silenced,침묵
-Taunted,도발
-Empower,강화
-Overload,과부하
-Cyrodiil,시로딜
-Tamriel,탐리엘
-Morrowind,모로윈드
-Summerset,서머셋
-Elsweyr,엘스웨이어
-Greymoor,그레이무어
-Blackwood,블랙우드
-High Isle,하이 아일
-Necrom,네크롬
-Gold Road,골드 로드
-Skyrim,스카이림
-Oblivion,오블리비언
-Coldharbour,콜드하버
-Clockwork City,태엽도시
-Murkmire,머크마이어
-Wrothgar,로스가르
-Vvardenfell,바르덴펠
-Artaeum,아르타이움
-Craglorn,크래글론
-Hew's Bane,휴의 파멸
-The Rift,균열
-Stonefalls,스톤폴스
-Deshaan,데샨
-Shadowfen,섀도우펜
-Eastmarch,동부행진
-Bleakrock Isle,블리크록 섬
-Bal Foyen,발 포이엔
-Glenumbra,글레넘브라
-Stormhaven,스톰헤이븐
-Rivenspire,리벤스파이어
-Alik'r Desert,알리크르 사막
-Bangkorai,뱅코라이
-Grahtwood,그라스우드
-Greenshade,그린셰이드
-Malabal Tor,말라발 토르
-Reaper's March,사신의 행진
-Veteran,베테랑
-Normal,일반
-Hard Mode,하드모드
-Trial,트라이얼
-Dungeon,던전
-Raid,레이드
-Pledge,서약
-Undaunted,언도온티드
-Cradle of Shadows,그림자의 요람
-Fungal Grotto,균류 동굴
-Spindleclutch,방추 구멍
-Banished Cells,추방된 감방
-Elden Hollow,엘든 공동
-Darkshade Caverns,다크셰이드 동굴
-City of Ash,재의 도시
-Arx Corinium,아르크스 코리니움
-Selene's Web,셀린의 거미줄
-Tempest Island,폭풍의 섬
-Volenfell,볼렌펠
-Wayrest Sewers,웨이레스트 하수도
-Hel Ra Citadel,헬 라 성채
-Aetherian Archive,에테리아 문고
-Sanctum Ophidia,오피디아 성소
-Maw of Lorkhaj,로르카즈의 아가리
-Halls of Fabrication,제작의 전당
-Cloudrest,클라우드레스트
-Sunspire,선스파이어
-Kyne's Aegis,카인의 방패
-Rockgrove,록그로브
-Dreadsail Reef,드레드세일 암초
-Sanity's Edge,제정신의 끝
-Lucent Citadel,빛나는 성채
-Mythic,신화
-Legendary,전설
-Epic,영웅
-Arcane,신비
-Training,훈련
-Divines,신성
-Infused,주입
-Impenetrable,철벽
-Reinforced,강화
-Well-Fitted,딱 맞는
-Nirnhoned,니른연마
-Defending,방어
-Powered,강력한
-Precise,정밀한
-Sharpened,날카로운
-Decisive,결정적인
-Charged,충전된
-Bloodthirsty,피에 굶주린
-Crafted,제작
-Overland,오버랜드
-Monster Set,몬스터 세트
-Arena Weapon,아레나 무기
-Gold,골드
-Transmute,변환
-Jewelry Crafting,장신구 제작
-Enchantment,인챈트
-Glyph,글리프
-Set,세트
-Nord,노르드
-Breton,브레튼
-Redguard,레드가드
-Orc,오크
-Imperial,임페리얼
-High Elf,하이 엘프
-Wood Elf,우드 엘프
-Khajiit,카짓
-Dark Elf,다크 엘프
-Argonian,아르고니안
-Dunmer,던머
-Altmer,알트머
-Bosmer,보스머
-Ebonheart Pact,에본하트 팩트
-Aldmeri Dominion,알드메리 도미니언
-Daggerfall Covenant,대거폴 커버넌트
-Champion Points,챔피언 포인트
-CP,챔피언 포인트
-Alliance Points,동맹 포인트
-AP,동맹 포인트
-Tel Var,텔 바르
-Transmutation,변환
-Outfit,코스튬
-Skill Point,스킬 포인트
-Attribute,속성
-Passive,패시브
-Active,액티브
-Morph,변형
-Synergy,시너지
-Parse,파싱
-Parse dummy,파싱 더미
-Dummy,더미
-Rotation,로테이션
-Weaving,위빙
-Light Attack,약공격
-Heavy Attack,강공격
-Bar swap,바 교체
-Front bar,앞 바
-Back bar,뒷 바
-Proc,발동
-Proc set,발동 세트
-Grind,그라인드
-Farm,파밍
-Carry,캐리
-PvP,PvP
-PvE,PvE
-BG,전장
-Battleground,전장
-Keep,거점
-Scroll,스크롤
-Emperor,황제
-Emp,황제
-Gank,갱크
-Zerg,저그
-Solo,솔로
-Group,그룹
-Guild,길드
-Guild trader,길드 상인
-Housing,하우징
-Furnishing,가구
-Crown,크라운
-Crown Store,크라운 스토어
-ESO Plus,ESO 플러스
-Chapter,챕터
-DLC,DLC
-Patch,패치
-Update,업데이트
-Event,이벤트
-Daily,일일퀘
-Weekly,주간퀘
-Achievement,업적
-Collectible,컬렉터블
-Mount,탈 것
-Pet,펫
-Motif,모티프
-Style,스타일
-Crafting,제작
-Alchemy,연금술
-Blacksmithing,대장간
-Clothier,재봉
-Woodworking,목공
-Enchanting,인챈트
-Provisioning,요리
-Research,연구
-Decon,분해
-Deconstruct,분해
-Trait,특성
-Intricate,복잡한
-Ornate,화려한
-Shining Castle,빛나는 성채
-Mother's Sorrow,어머니의 슬픔
-Moongrave Fane,달무덤 사당
-Lair of Maarselok,마르셀록의 소굴
-Depths of Malatar,말라타르의 심연
-Moon Hunter Keep,달사냥꾼 요새
-March of Sacrifices,희생의 행진
-Frostvault,서리 금고
-Scalecaller Peak,비늘부르는 자의 봉우리
-Falkreath Hold,팔크리스 요새
-Bloodroot Forge,피뿌리 대장간
-White-Gold Tower,백금탑
-Imperial City Prison,황도 감옥
-Ruins of Mazzatun,마자툰 유적
-Ruins of Nchuleftingth,은쿨레프팅스 유적
-Veteran Shining Castle,베테랑 빛나는 성채
-Normal Mode,일반 모드
-Veteran Mode,베테랑 모드
-n Shining Castle,일반 빛나는 성채
-v Shining Castle,베테랑 빛나는 성채
-n Lucent Citadel,일반 빛나는 성채
-v Lucent Citadel,베테랑 빛나는 성채
-whisper me,귓말 주세요
-whisper,귓말
-Shining Citadel,빛나는 성채
-Luminous Citadel,빛나는 성채
-Radiant Citadel,빛나는 성채
-Please whisper me,귓말 주세요
-please whisper,귓말 주세요
-msg me,귓말 주세요
-message me,귓말 주세요
-LFM tank,탱커 구합니다
-LFM healer,힐러 구합니다
-LFM dps,딜러 구합니다
-LFM dd,딜러 구합니다
-nDR,일반 드레드세일 암초
-vDR,베테랑 드레드세일 암초
-send me a whisper,귓말 주세요
-send a whisper,귓말 주세요
-send me a msg,귓말 주세요
-Shining Citadel Healer,빛나는 성채 힐러
-Shining Citadel Tank,빛나는 성채 탱커
-Shining Citadel DPS,빛나는 성채 딜러
-Shining Castle Healer,빛나는 성채 힐러
-Shining Castle Tank,빛나는 성채 탱커
-Shining Castle DPS,빛나는 성채 딜러
-gf,잘 싸웠습니다
-good fight,잘 싸웠습니다
-gf everyone,모두 수고했습니다
-good game,수고했습니다
-wp,잘하셨어요
-well played,잘하셨어요
-gg wp,수고했습니다 잘하셨어요
-gf wp,잘 싸웠습니다 잘하셨어요
-rip,아이고
-f,명복을 빕니다
-ez,쉬웠네요
-noob,초보
-nub,초보
-toxic,진상
-troll,트롤
-grief,방해
-griefing,방해 행위
+English,Korean,Type
+LFG,그룹 구합니다,META
+LFG,파티 구해,META
+LFM,멤버 구합니다,META
+LFM,멤 구함,META
+LFM,멤버 구해,META
+LFDG,돌멘 그룹 구합니다,META
+PST,귓말 주세요,META
+PST,귓해,META
+PST,귓요,META
+PST,귓주세요,META
+PST,부탁해요,META
+WC,채팅 실수,META
+WC,실수,META
+WC,오타,META
+WB,월드 보스,META
+AFK,자리 비움,META
+BRB,잠깐 자리 비움,META
+OOM,자원 부족,MOD
+HF,즐겜하세요,META
+HF,즐거운 게임 되세요,META
+HF,재밌게 하세요,META
+HF,즐미,META
+GZ,축하해요,META
+Grats,축하해요,META
+Gratz,축하해요,META
+WTB,구매 원합니다,META
+WTB,구해,META
+WTB,원해,META
+WTB,살려고,META
+WTS,판매 원합니다,META
+WTS,팜,META
+WTS,팝니다,META
+WTS,팔아요,META
+WTT,교환 원합니다,META
+WTT,교환요,META
+WTT,바꿔요,META
+WTT,바꾸자,META
+PUG,즉석 그룹,META
+PUG,즉그,META
+PUG,즉시 그룹,META
+Prog,공략 진행,MOD
+Prog,공략중,MOD
+Inc,적 접근 중,MOD
+DK,드래곤나이트,MOD
+Sorc,소서러,MOD
+NB,나이트블레이드,MOD
+Plar,템플러,MOD
+Den,워든,MOD
+Necro,네크로맨서,MOD
+Arc,아르카니스트,MOD
+MagDK,메지카 드래곤나이트,MOD
+StamDK,스태미나 드래곤나이트,MOD
+MagSorc,메지카 소서러,MOD
+StamSorc,스태미나 소서러,MOD
+MagBlade,메지카 나이트블레이드,MOD
+StamBlade,스태미나 나이트블레이드,MOD
+MagPlar,마지카 템플러,MOD
+StamPlar,스태미나 템플러,MOD
+MagDen,메지카 워든,MOD
+StamDen,스태미나 워든,MOD
+MagCro,메지카 네크로맨서,MOD
+StamCro,스태미나 네크로맨서,MOD
+AD,알드메리 자치령,MOD
+EP,에본하트 조약,MOD
+DC,대거폴 동맹,MOD
+HM,하드모드,MOD
+NM,일반 모드,MOD
+VM,베테랑 모드,MOD
+Trifecta,트리펙타,MOD
+Speed run,속도전,NAME
+vMA,베테랑 맬스트롬 아레나,NAME
+nMA,일반 맬스트롬 아레나,NAME
+vDSA,베테랑 드래곤스타 아레나,NAME
+nDSA,일반 드래곤스타 아레나,NAME
+vAA,베테랑 에테리아 문고,NAME
+nAA,일반 에테리아 문고,NAME
+vHRC,베테랑 헬 라 성채,NAME
+nHRC,일반 헬 라 성채,NAME
+vSO,베테랑 오피디아 성소,NAME
+nSO,일반 오피디아 성소,NAME
+vMoL,베테랑 로르카즈의 아가리,MOD
+nMoL,일반 로르카즈의 아가리,MOD
+vHoF,베테랑 제작의 전당,MOD
+nHoF,일반 제작의 전당,MOD
+vCR,베테랑 클라우드레스트,NAME
+nCR,일반 클라우드레스트,NAME
+vSS,베테랑 선스파이어,NAME
+nSS,일반 선스파이어,NAME
+vKA,베테랑 카인의 방패,NAME
+nKA,일반 카인의 방패,NAME
+vRG,베테랑 록그로브,NAME
+nRG,일반 록그로브,NAME
+vDSR,베테랑 드레드세일 암초,NAME
+nDSR,일반 드레드세일 암초,NAME
+vSE,베테랑 제정신의 끝,NAME
+nSE,일반 제정신의 끝,NAME
+vLC,베테랑 빛나는 성채,NAME
+nLC,일반 빛나는 성채,NAME
+CoH,크립트 오브 하츠,MOD
+FG,균류 동굴,MOD
+BC,추방된 감방,MOD
+EH,엘든 공동,MOD
+CoA,재의 도시,MOD
+ICP,임페리얼 시티 감옥,MOD
+WGT,화이트 골드 타워,MOD
+BRP,블러드루트 단조장,MOD
+FV,포스트 오브 쓰로트,MOD
+DoT,지속 피해,MOD
+HoT,지속 회복,MOD
+AoE,범위 공격,MOD
+CC,군중 제어,MOD
+CD,쿨타임,MOD
+LA,약공격,MOD
+HA,강공격,MOD
+GCD,글로벌 쿨다운,MOD
+BoE,장착 시 귀속,MOD
+BoP,습득 시 귀속,MOD
+RNG,랜덤,MOD
+OP,사기적으로 강함,MOD
+Meta,메타,MOD
+BiS,최고 세트,MOD
+Toon,캐릭터,MOD
+Char,캐릭터,MOD
+Main,본캐,MOD
+Alt,부캐,MOD
+MS,마법사 조합,MOD
+ZOS,제니맥스 온라인,MOD
+PTS,공개 테스트 서버,MOD
+NA,북미 서버,MOD
+EU,유럽 서버,MOD
+Dragonknight,드래곤나이트,MOD
+Sorcerer,소서러,MOD
+Nightblade,나이트블레이드,MOD
+Templar,템플러,MOD
+Warden,워든,MOD
+Necromancer,네크로맨서,MOD
+Arcanist,아르카니스트,MOD
+Tank,탱커,MOD
+Healer,힐러,MOD
+Damage Dealer,딜러,NAME
+DPS,딜러,MOD
+Off-tank,서브탱,MOD
+Support,지원,MOD
+Two Handed,양손,NAME
+One Hand and Shield,한손방패,NAME
+Dual Wield,쌍검,NAME
+Bow,활,MOD
+Destruction Staff,파괴 스태프,NAME
+Restoration Staff,회복 스태프,NAME
+Werewolf,늑대인간,MOD
+Vampire,뱀파이어,MOD
+Assault,돌격,MOD
+Magicka,마지카,MOD
+Stamina,스태미나,MOD
+Ultimate,궁극기,MOD
+Health,체력,MOD
+Spell Damage,주문 피해,NAME
+Weapon Damage,무기 피해,NAME
+Critical,치명타,MOD
+Penetration,관통,MOD
+Resistance,저항,MOD
+Recovery,회복량,MOD
+Max Magicka,최대 마지카,MOD
+Max Stamina,최대 스태미나,MOD
+Max Health,최대 체력,NAME
+Major Brutality,주요 잔혹함,NAME
+Minor Brutality,경미한 잔혹함,NAME
+Major Sorcery,주요 마법력,NAME
+Minor Sorcery,경미한 마법력,NAME
+Major Resolve,주요 결의,NAME
+Minor Resolve,경미한 결의,NAME
+Major Expedition,주요 원정,NAME
+Minor Expedition,경미한 원정,NAME
+Burning,화상,MOD
+Chilled,냉각,MOD
+Concussed,충격,MOD
+Poisoned,중독,MOD
+Diseased,질병,MOD
+Off Balance,균형 상실,NAME
+Stunned,기절,MOD
+Snared,감속,MOD
+Immobilized,속박,MOD
+Silenced,침묵,MOD
+Taunted,도발,MOD
+Empower,강화,MOD
+Overload,과부하,MOD
+Cyrodiil,시로딜,MOD
+Tamriel,탐리엘,MOD
+Morrowind,모로윈드,MOD
+Summerset,서머셋,MOD
+Elsweyr,엘스웨이어,MOD
+Greymoor,그레이무어,MOD
+Blackwood,블랙우드,MOD
+High Isle,하이 아일,NAME
+Necrom,네크롬,MOD
+Gold Road,골드 로드,NAME
+Skyrim,스카이림,MOD
+Oblivion,오블리비언,MOD
+Coldharbour,콜드하버,MOD
+Clockwork City,태엽도시,NAME
+Murkmire,머크마이어,MOD
+Wrothgar,로스가르,MOD
+Vvardenfell,바르덴펠,MOD
+Artaeum,아르타이움,MOD
+Craglorn,크래글론,MOD
+Hew's Bane,휴의 파멸,NAME
+The Rift,균열,NAME
+Stonefalls,스톤폴스,MOD
+Deshaan,데샨,MOD
+Shadowfen,섀도우펜,MOD
+Eastmarch,동부행진,MOD
+Bleakrock Isle,블리크록 섬,NAME
+Bal Foyen,발 포이엔,NAME
+Glenumbra,글레넘브라,MOD
+Stormhaven,스톰헤이븐,MOD
+Rivenspire,리벤스파이어,MOD
+Alik'r Desert,알리크르 사막,NAME
+Bangkorai,뱅코라이,MOD
+Grahtwood,그라스우드,MOD
+Greenshade,그린셰이드,MOD
+Malabal Tor,말라발 토르,NAME
+Reaper's March,사신의 행진,NAME
+Veteran,베테랑,MOD
+Normal,일반,MOD
+Hard Mode,하드모드,NAME
+Trial,트라이얼,MOD
+Dungeon,던전,MOD
+Raid,레이드,MOD
+Pledge,서약,MOD
+Undaunted,언도온티드,MOD
+Cradle of Shadows,그림자의 요람,NAME
+Fungal Grotto,균류 동굴,NAME
+Spindleclutch,방추 구멍,MOD
+Banished Cells,추방된 감방,NAME
+Elden Hollow,엘든 공동,NAME
+Darkshade Caverns,다크셰이드 동굴,NAME
+City of Ash,재의 도시,NAME
+Arx Corinium,아르크스 코리니움,NAME
+Selene's Web,셀린의 거미줄,NAME
+Tempest Island,폭풍의 섬,NAME
+Volenfell,볼렌펠,MOD
+Wayrest Sewers,웨이레스트 하수도,NAME
+Hel Ra Citadel,헬 라 성채,NAME
+Aetherian Archive,에테리아 문고,NAME
+Sanctum Ophidia,오피디아 성소,NAME
+Maw of Lorkhaj,로르카즈의 아가리,NAME
+Halls of Fabrication,제작의 전당,NAME
+Cloudrest,클라우드레스트,MOD
+Sunspire,선스파이어,MOD
+Kyne's Aegis,카인의 방패,NAME
+Rockgrove,록그로브,MOD
+Dreadsail Reef,드레드세일 암초,NAME
+Sanity's Edge,제정신의 끝,NAME
+Lucent Citadel,빛나는 성채,NAME
+Mythic,신화,MOD
+Legendary,전설,MOD
+Epic,영웅,MOD
+Arcane,신비,MOD
+Training,훈련,MOD
+Divines,신성,MOD
+Infused,주입,MOD
+Impenetrable,철벽,MOD
+Reinforced,강화,MOD
+Well-Fitted,딱 맞는,MOD
+Nirnhoned,니른연마,MOD
+Defending,방어,MOD
+Powered,강력한,MOD
+Precise,정밀한,MOD
+Sharpened,날카로운,MOD
+Decisive,결정적인,MOD
+Charged,충전된,MOD
+Bloodthirsty,피에 굶주린,MOD
+Crafted,제작,MOD
+Overland,오버랜드,MOD
+Monster Set,몬스터 세트,NAME
+Arena Weapon,아레나 무기,NAME
+Gold,골드,MOD
+Transmute,변환,MOD
+Jewelry Crafting,장신구 제작,NAME
+Enchantment,인챈트,MOD
+Glyph,글리프,MOD
+Set,세트,MOD
+Nord,노르드,MOD
+Breton,브레튼,MOD
+Redguard,레드가드,MOD
+Orc,오크,MOD
+Imperial,임페리얼,MOD
+High Elf,하이 엘프,NAME
+Wood Elf,우드 엘프,NAME
+Khajiit,카짓,MOD
+Dark Elf,다크 엘프,NAME
+Argonian,아르고니안,MOD
+Dunmer,던머,MOD
+Altmer,알트머,MOD
+Bosmer,보스머,MOD
+Ebonheart Pact,에본하트 팩트,NAME
+Aldmeri Dominion,알드메리 도미니언,NAME
+Daggerfall Covenant,대거폴 커버넌트,NAME
+Champion Points,챔피언 포인트,NAME
+CP,챔피언 포인트,MOD
+Alliance Points,동맹 포인트,NAME
+AP,동맹 포인트,MOD
+Tel Var,텔 바르,NAME
+Transmutation,변환,MOD
+Outfit,코스튬,MOD
+Skill Point,스킬 포인트,NAME
+Attribute,속성,MOD
+Passive,패시브,MOD
+Active,액티브,MOD
+Morph,변형,MOD
+Synergy,시너지,MOD
+Parse,파싱,MOD
+Parse dummy,파싱 더미,NAME
+Dummy,더미,MOD
+Rotation,로테이션,MOD
+Weaving,위빙,MOD
+Light Attack,약공격,NAME
+Heavy Attack,강공격,NAME
+Bar swap,바 교체,NAME
+Front bar,앞 바,NAME
+Back bar,뒷 바,NAME
+Proc,발동,MOD
+Proc set,발동 세트,NAME
+Grind,그라인드,MOD
+Farm,파밍,MOD
+Carry,캐리,MOD
+PvP,PvP,MOD
+PvE,PvE,MOD
+BG,전장,MOD
+Battleground,전장,MOD
+Keep,거점,MOD
+Scroll,스크롤,MOD
+Emperor,황제,MOD
+Emp,황제,MOD
+Gank,갱크,MOD
+Zerg,저그,MOD
+Solo,솔로,MOD
+Group,그룹,MOD
+Guild,길드,MOD
+Guild trader,길드 상인,NAME
+Housing,하우징,MOD
+Furnishing,가구,MOD
+Crown,크라운,MOD
+Crown Store,크라운 스토어,NAME
+ESO Plus,ESO 플러스,NAME
+Chapter,챕터,MOD
+DLC,DLC,MOD
+Patch,패치,MOD
+Update,업데이트,MOD
+Event,이벤트,MOD
+Daily,일일퀘,MOD
+Weekly,주간퀘,MOD
+Achievement,업적,MOD
+Collectible,컬렉터블,MOD
+Mount,탈 것,MOD
+Pet,펫,MOD
+Motif,모티프,MOD
+Style,스타일,MOD
+Crafting,제작,MOD
+Alchemy,연금술,MOD
+Blacksmithing,대장간,MOD
+Clothier,재봉,MOD
+Woodworking,목공,MOD
+Enchanting,인챈트,MOD
+Provisioning,요리,MOD
+Research,연구,MOD
+Decon,분해,MOD
+Deconstruct,분해,MOD
+Trait,특성,MOD
+Intricate,복잡한,MOD
+Ornate,화려한,MOD
+Shining Castle,빛나는 성채,NAME
+Mother's Sorrow,어머니의 슬픔,NAME
+Moongrave Fane,달무덤 사당,NAME
+Lair of Maarselok,마르셀록의 소굴,NAME
+Depths of Malatar,말라타르의 심연,NAME
+Moon Hunter Keep,달사냥꾼 요새,NAME
+March of Sacrifices,희생의 행진,NAME
+Frostvault,서리 금고,MOD
+Scalecaller Peak,비늘부르는 자의 봉우리,NAME
+Falkreath Hold,팔크리스 요새,NAME
+Bloodroot Forge,피뿌리 대장간,NAME
+White-Gold Tower,백금탑,NAME
+Imperial City Prison,황도 감옥,NAME
+Ruins of Mazzatun,마자툰 유적,NAME
+Ruins of Nchuleftingth,은쿨레프팅스 유적,NAME
+Veteran Shining Castle,베테랑 빛나는 성채,NAME
+Normal Mode,일반 모드,NAME
+Veteran Mode,베테랑 모드,NAME
+n Shining Castle,일반 빛나는 성채,NAME
+v Shining Castle,베테랑 빛나는 성채,NAME
+n Lucent Citadel,일반 빛나는 성채,NAME
+v Lucent Citadel,베테랑 빛나는 성채,NAME
+whisper me,귓말 주세요,NAME
+whisper,귓말,MOD
+Shining Citadel,빛나는 성채,NAME
+Luminous Citadel,빛나는 성채,NAME
+Radiant Citadel,빛나는 성채,NAME
+Please whisper me,귓말 주세요,NAME
+please whisper,귓말 주세요,NAME
+msg me,귓말 주세요,NAME
+message me,귓말 주세요,NAME
+LFM tank,탱커 구합니다,NAME
+LFM healer,힐러 구합니다,NAME
+LFM dps,딜러 구합니다,NAME
+LFM dd,딜러 구합니다,NAME
+nDR,일반 드레드세일 암초,NAME
+vDR,베테랑 드레드세일 암초,NAME
+send me a whisper,귓말 주세요,NAME
+send a whisper,귓말 주세요,NAME
+send me a msg,귓말 주세요,NAME
+Shining Citadel Healer,빛나는 성채 힐러,MOD
+Shining Citadel Tank,빛나는 성채 탱커,MOD
+Shining Citadel DPS,빛나는 성채 딜러,MOD
+Shining Castle Healer,빛나는 성채 힐러,MOD
+Shining Castle Tank,빛나는 성채 탱커,MOD
+Shining Castle DPS,빛나는 성채 딜러,MOD
+good fight,잘 싸웠습니다,NAME
+gf everyone,모두 수고했습니다,NAME
+good game,수고했습니다,NAME
+well played,잘하셨어요,NAME
+gg wp,수고했습니다 잘하셨어요,NAME
+gf wp,잘 싸웠습니다 잘하셨어요,NAME
+rip,아이고,META
+f,명복을 빕니다,MOD
+ez,쉬웠네요,META
+noob,초보,MOD
+nub,초보,MOD
+toxic,진상,MOD
+troll,트롤,MOD
+grief,방해,MOD
+griefing,방해 행위,MOD
+run,런,MOD
+runs,런,MOD
+clear,클리어,MOD
+attempt,시도,MOD
+speedrun,스피드런,MOD
+gear,장비,MOD
+build,빌드,MOD
+slot,슬롯,MOD
+spot,자리,MOD
+buff,버프,MOD
+debuff,디버프,MOD
+1T,탱커 1명,MOD
+2T,탱커 2명,MOD
+1H,힐러 1명,MOD
+2H,힐러 2명,MOD
+1D,딜러 1명,MOD
+2D,딜러 2명,MOD
+3D,딜러 3명,MOD
+4D,딜러 4명,MOD
+MoL,로르카즈의 아가리,NAME
+GH,그레이무어,NAME
+HoF,영웅의 전당,NAME
+SS,선켄 시티,NAME

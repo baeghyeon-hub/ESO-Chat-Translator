@@ -2,8 +2,9 @@ translation_cache.json
 *.log
 __pycache__/
 *.pyc
-빌드_exe.bat
-번역기_실행.bat
+#Ubc88#Uc5ed#Uae30_#Uc2e4#Ud589.bat
+#Ube4c#Ub4dc_exe.bat
 build/
 dist/
+config.json
 *.spec

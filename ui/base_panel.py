@@ -92,8 +92,10 @@ class FloatingPanel(QWidget):
         p = QPainter(self)
         p.setRenderHint(QPainter.RenderHint.Antialiasing)
         r, g, b = self.bg_color
+        # 테두리도 bg_alpha에 비례해 투명해지도록 처리
+        border_alpha = min(180, self.bg_alpha)
         p.setBrush(QColor(r, g, b, self.bg_alpha))
-        p.setPen(QColor(50, 50, 60, 180))
+        p.setPen(QColor(50, 50, 60, border_alpha))
         p.drawRoundedRect(self.rect(), 10, 10)
 
     def mousePressEvent(self, e):

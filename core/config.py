@@ -40,6 +40,8 @@ DEFAULT_CONFIG: dict = {
     "fade_seconds": 10,
     "my_character_name": "",
     "hide_my_chat": False,
+    "keywords": [],
+    "keyword_alert": True,
 }
 
 

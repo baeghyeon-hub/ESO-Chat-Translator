@@ -98,7 +98,7 @@ class SettingsDialog(QWidget):
         self.setWindowFlags(Qt.WindowType.WindowStaysOnTopHint)
         self.setStyleSheet("background:#18181b;color:#e4e4e7;")
         self.setMinimumWidth(480)
-        self.resize(480, 560)
+        self.resize(480, 620)
         self._build()
 
     def _build(self):
@@ -240,6 +240,29 @@ class SettingsDialog(QWidget):
         my_hint.setStyleSheet("color:#52525b;font-size:10px;font-family:'맑은 고딕';")
         lay.addWidget(my_hint)
 
+        sep3 = QFrame()
+        sep3.setFrameShape(QFrame.Shape.HLine)
+        sep3.setStyleSheet("color:#27272a;")
+        lay.addWidget(sep3)
+
+        # 키워드 알림
+        kw_top = QHBoxLayout()
+        from PyQt6.QtWidgets import QCheckBox
+        self.kw_alert_cb = QCheckBox("🔔 키워드 알림")
+        self.kw_alert_cb.setChecked(self.cfg.get("keyword_alert", True))
+        self.kw_alert_cb.setStyleSheet("color:#a1a1aa;font-family:'맑은 고딕';font-size:11px;")
+        kw_top.addWidget(self.kw_alert_cb)
+        kw_top.addStretch()
+        lay.addLayout(kw_top)
+
+        self.kw_edit = QLineEdit(",".join(self.cfg.get("keywords", [])))
+        self.kw_edit.setPlaceholderText("쉼표로 구분 (예: 내캐릭터명, LFG, WTB)")
+        self.kw_edit.setStyleSheet(self._INP)
+        lay.addWidget(self.kw_edit)
+        kw_hint = QLabel("※ 채팅에 키워드 포함 시 Windows 알림 팝업")
+        kw_hint.setStyleSheet("color:#52525b;font-size:10px;font-family:'맑은 고딕';")
+        lay.addWidget(kw_hint)
+
         lay.addStretch()
 
         save_btn = QPushButton("저장")
@@ -345,6 +368,8 @@ class SettingsDialog(QWidget):
         self.cfg["reverse_glossary_path"] = self.rev_glossary_edit.text().strip()
         self.cfg["my_character_name"]  = self.my_name_edit.text().strip()
         self.cfg["hide_my_chat"]       = self.hide_my_cb.isChecked()
+        self.cfg["keyword_alert"]      = self.kw_alert_cb.isChecked()
+        self.cfg["keywords"]           = [k.strip() for k in self.kw_edit.text().split(",") if k.strip()]
         self.saved.emit(self.cfg)
         self.close()
 
